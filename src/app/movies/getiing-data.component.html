@@ -1,0 +1,12 @@
+<!-- <h1>{{title}}</h1> -->
+<app-movie-desc></app-movie-desc>
+<div *ngIf='isLoading' class="load-icon"></div>
+<input class="form-control" type="search" [formControl]="searchControl" placeholder="Serach movie...">
+  <div  class="wrapper">
+    <div class="poster" *ngFor='let movie of movies'>
+      <img src="{{movie.Poster}}" alt="poster">
+      <div class="poster__info">
+        <h2>{{movie.Title}}</h2> <h2>Year: {{movie.Year}}</h2>
+      </div>
+    </div>
+<!-- <pre>{{ movies|json}}</pre> -->
