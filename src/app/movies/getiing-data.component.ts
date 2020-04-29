@@ -35,8 +35,9 @@ export class GetiingDataComponent implements OnInit {
       this.title = q;
       this.restfulService.getSpotyfyData(this.title).subscribe((data) => {
         this.isLoading = false;
-        this.movies = data.Search;
+        this.movies = data;
         console.log(this.movies);
+        console.log(data);
       });
     });
   }

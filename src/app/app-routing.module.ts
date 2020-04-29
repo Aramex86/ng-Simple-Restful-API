@@ -5,8 +5,8 @@ import { GetiingDataComponent } from './movies/getiing-data.component';
 
 
 const routes: Routes = [
-  {path: '' , component: GetiingDataComponent},
-  {path: 'movie-desc' , component: MovieDescComponent},
+  // {path: '' , component: GetiingDataComponent},
+  // {path: 'movie-desc' , component: MovieDescComponent},
 ];
 
 @NgModule({
