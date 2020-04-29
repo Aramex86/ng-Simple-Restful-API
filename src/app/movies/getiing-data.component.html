@@ -1,11 +1,14 @@
 <!-- <h1>{{title}}</h1> -->
 <div *ngIf='isLoading' class="load-icon"></div>
-<input class="form-control" type="search" [formControl]="searchControl" placeholder="Serach movie...">
+<input class="form-control" type="search" [formControl]="searchControl" placeholder="Serach movie..." autocomplete="on">
   <div  class="wrapper">
     <div class="poster" *ngFor='let movie of movies.Search'>
+      <a [routerLink]="['movie',movie.imdbID]">
       <img src="{{movie.Poster}}" alt="poster">
       <div class="poster__info">
         <h2>{{movie.Title}}</h2> <h2>Year: {{movie.Year}}</h2>
       </div>
+    </a>
     </div>
-<!-- <pre>{{ movies|json}}</pre> -->
+<!-- <pre style="color: aliceblue;">{{ movies|json}}</pre>
+ -->

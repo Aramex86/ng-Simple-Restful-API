@@ -6,14 +6,21 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { GetiingDataComponent } from './movies/getiing-data.component';
+import { HomeComponent } from './home/home.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 import { MovieDescComponent } from './movie-desc/movie-desc.component';
-import { MovieRoutingModule } from './movie-desc/movie-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     GetiingDataComponent,
-    MovieDescComponent
+    HomeComponent,
+    NotfoundComponent,
+    NavbarComponent,
+    LoginFormComponent,
+    MovieDescComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,6 @@ import { MovieRoutingModule } from './movie-desc/movie-routing.module';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MovieRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

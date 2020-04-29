@@ -3,7 +3,6 @@ import {RestfulService} from '../sevices/restful.service';
 import {Observable} from 'rxjs';
 import {FormControl} from '@angular/forms';
 import {filter,debounceTime,distinctUntilChanged} from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 
 
@@ -16,11 +15,8 @@ export class GetiingDataComponent implements OnInit {
 
   movies: any = [];
   isLoading = false;
-  title:string;
+  title;
   searchControl = new FormControl();
-  router: any;
-
-
 
   constructor(private restfulService: RestfulService) {
 
@@ -33,11 +29,11 @@ export class GetiingDataComponent implements OnInit {
     ).subscribe(q => {
       this.isLoading = true;
       this.title = q;
-      this.restfulService.getSpotyfyData(this.title).subscribe((data) => {
+      this.restfulService.getMovieData(this.title).subscribe((data) => {
         this.isLoading = false;
         this.movies = data;
-        console.log(this.movies);
-        console.log(data);
+        // console.log(this.movies.Search);
+         //console.log(data);
       });
     });
   }

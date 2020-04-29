@@ -1,0 +1,23 @@
+.nav-wrapp{
+    background: linear-gradient(to right,#f27121,#e94057);
+    &__list{
+        padding: 1rem 1rem;
+        display: flex;
+        list-style: none;
+        margin: 0;
+    }
+    &__item{
+        padding: 0 1rem;
+    }
+    &__link{
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: all .5s;
+        &:hover{
+            color: rgb(98, 143, 9);
+        }
+    }
+}

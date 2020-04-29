@@ -1,2 +1,32 @@
-<p>movie-desc works!</p>
 
+
+<div *ngFor="let res of response">
+    <div class="movie-wrapp">
+    <div class="movie-wrapp__poster">
+        <img [src]="[res.Poster]" class="movie-wrapp__poster-img">
+    </div>
+    <div class="movie-wrapp__info">
+        <ul class="movie-wrapp__info-list">
+            <li class="movie-wrapp__info-item"><h2>{{res.Title}}</h2></li>
+            <li class="movie-wrapp__info-item">Year : {{res.Year}}</li>
+            <li class="movie-wrapp__info-item">Released Date : {{res.Released}}</li>
+            <li class="movie-wrapp__info-item">Runtime : {{res.Runtime}}</li>
+            <li class="movie-wrapp__info-item">Genre : {{res.Genre}}</li>
+            <li class="movie-wrapp__info-item">Director : {{res.Director}}</li>
+            <li class="movie-wrapp__info-item">Actors : {{res.Actors}}</li>
+            <li class="movie-wrapp__info-item">{{res.Plot}}</li>
+            <li class="movie-wrapp__info-item">Country : {{res.Country}}</li>
+            <li class="movie-wrapp__info-item">Ratings : </li>
+            <div *ngFor="let val of res.Ratings">
+                {{val.Source}} : {{val.Value}}
+            </div>
+            <!-- <li>{{res.Ratings[1]}}</li>
+            <li>{{res.Ratings[2]}}</li> -->
+        </ul>
+        <h2></h2>
+    </div>
+</div>
+    
+</div>
+
+<!-- <pre style="color: aliceblue;">{{response| json}}</pre> -->

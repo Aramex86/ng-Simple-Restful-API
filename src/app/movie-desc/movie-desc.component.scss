@@ -1,3 +1,24 @@
-p{
-    color:white;
+.movie-wrapp{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+
+    &__poster{
+        &-img{
+            width: 400px;
+            height: 600px;
+        }
+    }
+
+    &__info{
+        width: 50%;
+
+        &-list{}
+
+        &-item{
+            list-style: none;
+            padding: 1rem 0;
+        }
+    }
 }
+

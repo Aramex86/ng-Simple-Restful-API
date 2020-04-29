@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MovieDescComponent } from './movie-desc/movie-desc.component';
-import { GetiingDataComponent } from './movies/getiing-data.component';
 
+import {HomeComponent} from './home/home.component';
+import {NotfoundComponent} from './notfound/notfound.component';
+import {GetiingDataComponent} from './movies/getiing-data.component';
+import {LoginFormComponent} from './login-form/login-form.component';
+import { MovieDescComponent } from './movie-desc/movie-desc.component';
 
 const routes: Routes = [
-  // {path: '' , component: GetiingDataComponent},
-  // {path: 'movie-desc' , component: MovieDescComponent},
+  {path: '', component: HomeComponent},
+  {path: 'movies', component: GetiingDataComponent},
+  {path: 'movies/movie/:imdbID', component: MovieDescComponent},
+  {path: 'login', component: LoginFormComponent},
+  {path: '**', component: NotfoundComponent},
 ];
 
 @NgModule({
