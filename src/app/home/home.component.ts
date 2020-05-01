@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RestfulService } from './../sevices/restful.service';
 import { Observable } from 'rxjs';
 import { Movies } from '../models/Movie.model';
-import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -15,7 +14,7 @@ export class HomeComponent implements OnInit {
   serial$: Observable<Movies[]>
 
   serials: any=[];
-  constructor(private serialservice: RestfulService) {
+  constructor(private serialservice: RestfulService,) {
 
    }
 
@@ -26,8 +25,5 @@ export class HomeComponent implements OnInit {
 
       // console.log(data);
     });
-
-    
-
-}
+  }
 }

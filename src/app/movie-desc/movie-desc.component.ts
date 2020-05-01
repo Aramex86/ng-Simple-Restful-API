@@ -9,13 +9,13 @@ import { RestfulService } from './../sevices/restful.service';
 })
 export class MovieDescComponent implements OnInit {
 
-  
+
   imdbID;
   Poster;
-  response=[];
+  response= [];
   subscription;
-  
-  
+
+
 
   constructor(
     private route: ActivatedRoute,

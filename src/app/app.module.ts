@@ -11,6 +11,11 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { MovieDescComponent } from './movie-desc/movie-desc.component';
+ 
+import {AuthGuardService} from './sevices/auth-guard.service';
+import {LoginService} from './sevices/login.service';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -21,15 +26,18 @@ import { MovieDescComponent } from './movie-desc/movie-desc.component';
     NavbarComponent,
     LoginFormComponent,
     MovieDescComponent,
+    LoginComponent,
+    
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthGuardService,
+    LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

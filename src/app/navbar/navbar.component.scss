@@ -1,7 +1,11 @@
 .nav-wrapp{
     background: linear-gradient(to right,#f27121,#e94057);
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
     &__list{
-        padding: 1rem 1rem;
+        padding: 1rem 0;
         display: flex;
         list-style: none;
         margin: 0;
@@ -19,5 +23,9 @@
         &:hover{
             color: rgb(98, 143, 9);
         }
+    }
+    &__btn{
+        height: 31px;
+        width: 100px;
     }
 }

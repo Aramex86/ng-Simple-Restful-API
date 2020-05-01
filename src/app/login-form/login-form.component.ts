@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { FormGroup,FormBuilder, Validators} from '@angular/forms';
 import { User } from './../user';
 import { RestfulService } from './../sevices/restful.service';
+import { LoginService } from '../sevices/login.service';
 
 @Component({
   selector: 'app-login-form',
@@ -10,24 +11,21 @@ import { RestfulService } from './../sevices/restful.service';
 })
 export class LoginFormComponent implements OnInit {
 
-  form = new FormGroup({
-    username: new FormControl('', Validators.required),
-    email: new FormControl('',Validators.required)
-  });
+  form: FormGroup;
 
-  title ="Two-way data binding with ngModel"
+  constructor(
+    private countryservice: RestfulService,
+    private loginservice: LoginService,
+    fb: FormBuilder
+    ) {
+      this.form = fb.group({
+        username : ['', Validators.required],
+        password : ['', Validators.required],
+        email:['', Validators.required]
+    });
+    }
 
-  countries = ['USA', 'UK', 'Singapore', 'Australia'];
 
-  model = new User('', '', '');
-  submitted = false;
 
-  constructor(private countryservice: RestfulService) { }
-
-  ngOnInit(): void {
-  }
-
-  onSubmit() {
-    this.submitted = true;
-  }
+  ngOnInit(): void { }
 }

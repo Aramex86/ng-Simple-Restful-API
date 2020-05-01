@@ -1,0 +1,22 @@
+<form [formGroup]="form" (ngSubmit)="login()" autocomplete="on">
+  <div class="input-group mb-3 input__width">
+    <input type="text" name="Username" class="form-control" formControlName="username" placeholder="Username" aria-label="Username"
+      aria-describedby="basic-addon1">
+    <div *ngIf="form.controls.username.touched && !form.controls.username.valid" class="alert alert-danger notif">
+      Username is required
+    </div>
+  </div>
+  <div class="input-group mb-3 input__width">
+    <input type="password" class="form-control" formControlName="password" placeholder="Password" aria-label="Password"
+      aria-describedby="basic-addon1">
+    <div *ngIf="form.controls.password.touched && form.controls.password.errors" class="alert alert-danger notif">
+      <div *ngIf="form.controls.password.errors.invalidLogin">
+        Username or password is invalid.
+      </div>
+      <div *ngIf="form.controls.password.errors.required">
+        Password is required
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Login</button>
+</form>
